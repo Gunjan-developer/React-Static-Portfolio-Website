@@ -1,0 +1,170 @@
+.service_container {
+    width: 100%;
+    position: relative;
+    min-height: 550px;
+}
+
+.service_container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(11,7,3 , 0.6);
+}
+.service_container img {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+    margin-top: 30px;
+}
+
+/* new learning for you */
+/* how to write the words on the wallpaper will be the task for you Gunjan Indurkar. */
+
+.service_container .service_content {
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+
+    position: absolute;
+    bottom: 30%;
+    left: 30px;
+}
+
+.service_container .service_content small{
+    padding: 8px 18px;
+    background-color: rgba(249 , 230 , 184 , 0.1);
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
+    color: rgba(249 , 230 , 184 , 1);
+    margin-bottom: 20px;
+}
+
+.service_container .service_content small i{ 
+    /* height: 36px;
+    width: 34px; */
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(249 , 230 , 184 , 0.5);
+}
+
+.service_container .service_info{
+    width: 100%;
+    display: flex;
+}
+
+.service_container .service_info .content_wrapper {
+    width: 50%;
+}
+
+.service_container .service_info .content_wrapper h2{ 
+    color: rgba(249 , 230 , 184 , 1);
+    font-size: 38px;
+    line-height: 45px;
+    margin: 10px 0;
+}
+
+.service_container .service_info .content_wrapper p{ 
+    color: rgba(255 , 255 , 255 , 0.5);
+    font-size: 65%;
+    width: 80%;
+}
+
+.service_container .service_info .content_wrapper h3 {
+    color: rgba(249 , 230 , 184 , 1);
+    font-size: 28px;
+    line-height: 35px;
+    margin: 10px 0;
+}
+
+.Gallery {
+    columns: 300px;
+}
+
+.Gallery .gallery_img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 1rem;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.Gallery .gallery_img::after { 
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(11,7,3 , 0.5);
+    border-radius: 20px;
+    outline: 1px solid rgba(131 , 131 , 131 , 0.8);
+    outline-offset: -35px;
+
+    transition: 0.6s;
+}
+
+.Gallery .gallery_img:hover:after {
+    background-color: rgba(11,7,3 , 0.2);
+    outline-color: rgba(249 , 230 , 184 , 1);
+}
+
+.Gallery .gallery_img::before {
+    content: attr(count);
+    position: absolute;
+    bottom: 20px;
+    left: 48px;
+    z-index: 1;
+    font-size: 100px;
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(249 , 230 , 184 , 1);
+}
+
+.Gallery .gallery_img:hover:before {
+    -webkit-text-stroke-color: rgba(249 , 230 , 184 , 1);
+}
+
+.Gallery .gallery_img img{ 
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    transition: .6s;
+    /* margin-bottom: 1rem; */
+}
+
+.Gallery .gallery_img:hover img {
+    transform: scale(1.01);
+    filter: saturate(200%);
+}
+
+@media screen and (max-width:900px) {
+    .service_container .service_info {
+        flex-direction: column;
+    }
+
+    .service_container .service_content {
+        bottom: 0%;
+    }
+
+    .service_container .service_info .content_wrapper {
+        width: 100%;
+    }
+
+    .service_container .service_info .content_wrapper p{ 
+        width: 80%;
+    }
+
+    .Gallery {
+        margin-top: 120px;
+    }
+}
